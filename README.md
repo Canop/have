@@ -27,6 +27,11 @@ fn analyze(log_lines: Vec<LogLine>) {
         .for_each(|e| println!("{} hits by remote addresse {}", e.1.len(), e.0));
 }
 ```
+## Removal of this crate
+
+I just found out there was already another crate doing exactly the same thing the same way, with added features: [tap](https://crates.io/crates/tap).
+
+I see no reason not to use the oldest crate. Unless there's an unexpected problem with the *tap* crate, I suggest you choose it over mine when building a new thing.
 
 ## Usage:
 
