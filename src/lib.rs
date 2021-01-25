@@ -15,11 +15,11 @@
 //! ```
 
 pub trait Fun {
-    fn fun<F, D>(self, f: F) -> Self where F: Fn(&Self) -> D;
+    fn fun<F, D>(self, f: F) -> Self where F: FnMut(&Self) -> D;
 }
 
 impl<T> Fun for T {
-    fn fun<F, D>(self, f: F) -> Self where F: Fn(&Self) -> D {
+    fn fun<F, D>(self, mut f: F) -> Self where F: FnMut(&Self) -> D {
         f(&self);
         self
     }
